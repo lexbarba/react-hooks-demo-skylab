@@ -81,36 +81,6 @@ const marvelApi = {
                 if (data) return data
                 throw Error(response.message)
             })
-    },
-
-    /**
-    * 
-    * Method to get comic info
-    * 
-    * @param {string} comicId  - Comic to be found.
-    * 
-    * @throws {TypeError} - If comicId is not a string.
-    * @throws {Error} - If comicId is empty.
-    * @throws {Error} - If no character matches.
-    * 
-    * @returns {Object} - With comic info
-    */
-
-    retrieveComic(comicId) {
-        if (typeof comicId !== 'string') throw TypeError(`${comicId} is not a string`)
-        if (!comicId.trim().length) throw Error(`comicId is empty`)
-
-        return fetch(`${this.url}comics/${comicId}?${this.hash}`)
-            .then(response => response.json())
-
-            .then(response => {
-                if (!response.data) throw Error(response.status)
-
-                const { data } = response
-
-                if (data) return data
-                throw Error(response.message)
-            })
     }
 }
 

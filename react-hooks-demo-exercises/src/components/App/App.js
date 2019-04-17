@@ -4,9 +4,10 @@ import Search from "../Search"
 import Context from "../Context"
 import { DemoContext } from "../DemoContext"
 import Counter from '../Counter'
-// import useCustomHook from '../CustomHook'
+import ModalExample from '../ModalExample'
 
 import "./index.sass"
+
 
 export default function App() {
   const [email, setEmail] = useState('')
@@ -54,6 +55,16 @@ export default function App() {
               <div className="card-header title is-4">Counter (useReducer)</div>
               <div className="card-content has-text-centered">
                   <Counter />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="column is-half is-offset-one-quarter">
+          <div className="card">
+            <div className="card-content">
+              <div className="card-header title is-4">Log In Form (Custom Hook)</div>
+              <div className="card-content has-text-centered">
+                  <ModalExample />
               </div>
             </div>
           </div>

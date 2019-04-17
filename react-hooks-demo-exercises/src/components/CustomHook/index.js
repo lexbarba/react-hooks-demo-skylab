@@ -1,14 +1,16 @@
-import React, {useState} from 'react'
+import { useState } from 'react';
 
-export default function useCustomHook(initialValue) {
-    const [value, setValue] = useState(initialValue);
-  
-    function handleChange(e) {
-      setValue(e.target.value);
-    }
-  
-    return {
-      value,
-      onChange: handleChange
-    }
+const useCustomHook = () => {
+  const [isShowing, setIsShowing] = useState(null);
+
+  function toggle() {
+    setIsShowing(!isShowing);
   }
+
+  return {
+    isShowing,
+    toggle,
+  }
+}
+
+export default useCustomHook
