@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import Login from "../Login/index"
+import Login from "../Login/index-hooks"
 import Search from "../Search"
 import Context from "../Context"
 import { DemoContext } from "../DemoContext"
-import Counter from '../Counter'
+import Counter from '../Counter/index-component'
 import ModalExample from '../ModalExample'
 
 import "./index.sass"
@@ -22,7 +22,7 @@ export default function App() {
         <div className="column is-half">
           <div className="card">
             <div className="card-content">
-              <div className="card-header title is-4">Log In Form (useState)</div>
+              <div className="card-header title is-4">Log In Form (useState & useContext)</div>
               <div className="card-content">
                   <Login />
               </div>

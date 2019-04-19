@@ -1,7 +1,7 @@
 import React from 'react'
 import Feedback from '../Feedback'
 
-export default function SearchResults({onCharacterSelected, feedback, characters, searching}) {
+export default function SearchResults( { onCharacterSelected, feedback, characters, searching } ) {
     
     return (
     <section>

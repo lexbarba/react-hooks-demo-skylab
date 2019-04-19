@@ -10,8 +10,6 @@ marvelApi.apiKey = process.env.REACT_APP_MARVEL_API_KEY;
 
 marvelApi.privateApiKey = process.env.REACT_APP_MARVEL_PRIVATE_API_KEY;
 
-debugger
-
 ReactDOM.render(<App/>, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
