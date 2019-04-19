@@ -19,7 +19,7 @@ export default function App() {
     <main className="App container has-text-centered">
       <h1 className="margin title is-2">React Hooks Skylab Demo</h1>
       <div className="columns is-mobile is-multiline">
-        <div className="column is-half is-offset-one-quarter">
+        <div className="column is-half">
           <div className="card">
             <div className="card-content">
               <div className="card-header title is-4">Log In Form (useState)</div>
@@ -29,17 +29,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="column is-half is-offset-one-quarter">
-          <div className="card">
-            <div className="card-content">
-              <div className="card-header title is-4">Search Form (useEffect)</div>
-              <div className="card-content has-text-centered">
-                <Search />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="column is-half is-offset-one-quarter">
+        <div className="column is-half">
           <div className="card">
             <div className="card-content">
               <div className="card-header title is-4">Autofill Text (useContext)</div>
@@ -49,7 +39,17 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="column is-half is-offset-one-quarter">
+        <div className="column is-three-fifths">
+          <div className="card">
+            <div className="card-content">
+              <div className="card-header title is-4">Search Form (useEffect)</div>
+              <div className="card-content has-text-centered">
+                <Search />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="column is-one-fifth">
           <div className="card">
             <div className="card-content">
               <div className="card-header title is-4">Counter (useReducer)</div>
@@ -59,10 +59,10 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="column is-half is-offset-one-quarter">
+        <div className="column is-one-fifth">
           <div className="card">
             <div className="card-content">
-              <div className="card-header title is-4">Log In Form (Custom Hook)</div>
+              <div className="card-header title is-4">Modal (Custom Hook)</div>
               <div className="card-content has-text-centered">
                   <ModalExample />
               </div>

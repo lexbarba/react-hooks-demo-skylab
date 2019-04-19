@@ -2,6 +2,8 @@
 
 Demo to show Bootcamp students how to use 5 of the new Hooks available in React.
 
+[Slides](https://slides.com/alexbarba/react-hooks-demo-skylab/#/)
+
 ## Hooks
 
 Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
