@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import Login from "../Login/index-hooks"
-import Search from "../Search"
-import Context from "../Context"
+import Login from "../Login/index-component"
+import Search from "../Search/index-hooks"
+import Context from "../Context/index-hooks"
 import { DemoContext } from "../DemoContext"
 import Counter from '../Counter/index-component'
 import ModalExample from '../ModalExample'
@@ -32,7 +32,7 @@ export default function App() {
         <div className="column is-half">
           <div className="card">
             <div className="card-content">
-              <div className="card-header title is-4">Autofill Text (useContext)</div>
+              <div className="card-header title is-4">Autofill Text (useContext & Custom Hook)</div>
               <div className="card-content has-text-centered">
                   <Context />
               </div>

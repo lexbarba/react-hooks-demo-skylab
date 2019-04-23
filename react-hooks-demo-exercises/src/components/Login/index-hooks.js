@@ -15,7 +15,6 @@ export default function Login () {
             <div className="columns is-mobile is-centered">
                 <div className="column">
                     <form className="login__form" onSubmit={handleFormSubmit}>
-                        <h4 className="subtitle is-4 black">Log In</h4>
                         <div className="field">
                             <p className="control has-icons-left has-icons-right">
                                 <input className="input is-small is-rounded" type="email" name="email" placeholder="Email" required onChange={e => setEmail(e.target.value)}/>

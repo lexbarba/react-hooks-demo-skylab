@@ -3,7 +3,8 @@ import Modal from "../Modal"
 import useCustomHook from '../CustomHook'
 
 export default function ModalExample(){
-  const {isShowing, toggle} = useCustomHook();
+  const {isShowing, toggle} = useCustomHook()
+  
   return (
     <div>
       <button onClick={toggle}>Show Modal</button>

@@ -6,19 +6,21 @@ import logic from '../../Logic'
 
 export default class Search extends Component {
 
-    state = { query: null, characters: null, feedback: null, character: null, searching: null}
+    state = { query: 'avengers', characters: null, feedback: null, character: null, searching: null}
+
+    componentDidMount(){
+        this.handleSearch()
+    };
+
+    componentDidUpdate(prevProps, prevState){
+        (this.state.query !== prevState.query) && this.handleSearch()
+    }
 
     handleSearch = () => {
         try {
-            this.setState({ searching: true, characters: null, character: null })
+            this.setState({ feedback: null, searching: true, characters: null, character: null })
             logic.searchCharacter(this.state.query)
-                .then(({results}) => {
-                    this.setState({
-                        searching: null,
-                        feedback: null,
-                        characters: results.map(({ id, name, thumbnail: {path,extension} }) => ({id, name, path, extension}))
-                    })
-                })
+                .then(({results}) => {this.setState({ searching: null, feedback: null, characters: results.map(({ id, name, thumbnail: {path,extension} }) => ({id, name, path, extension}))})})
                 .catch(({ message }) => this.setState({ feedback: message, searching: null, characters: null }))
         } catch ({ message }) {
             this.setState({ feedback: message, searching: null,characters: null })
@@ -29,14 +31,8 @@ export default class Search extends Component {
         try {
         logic.retrieveCharacter(id)
             .then(el => this.setState({character: el.results[0]}))
-            .catch(({ message }) => {
-                this.setState({character: null})
-                this.setState({message}) 
-            })
-        } catch ({ message }) {
-            this.setState({character: null})
-            this.setState({message}) 
-        }
+            .catch(({ message }) => { this.setState({character: null, message}) })
+        } catch ({ message }) { this.setState({character: null, message}) }
     }
 
     render() {

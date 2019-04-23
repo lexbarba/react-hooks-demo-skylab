@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext } from 'react'
 import CharacterInfoResult from '../CharacterInfoResult'
 import SearchResults from '../SearchResults'
-import logic from '../../Logic'
+import logic from '../../logic'
 import { DemoContext } from '../DemoContext';
 
 
@@ -26,35 +26,17 @@ export default function Search() {
         setFeedback(null)
         try {
             logic.searchCharacter(query)
-                .then(({results}) => {
-                    setSearching(null)
-                    setFeedback(null)
-                    setCharacters(results.map(({ id, name, thumbnail: {path,extension} }) => ({id, name, path, extension})))
-                })
-                .catch(({ message }) => {
-                    setFeedback(message)
-                    setSearching(null)
-                    setCharacters(null)
-                })
-        } catch ({ message }) {
-            setFeedback(message)
-            setSearching(null)
-            setCharacters(null)
-        }
+                .then(({results}) => { setSearching(null); setFeedback(null); setCharacters(results.map(({ id, name, thumbnail: {path,extension} }) => ({id, name, path, extension})))})
+                .catch(({ message }) => { setFeedback(message); setSearching(null); setCharacters(null)})
+        } catch ({ message }) { setFeedback(message); setSearching(null); setCharacters(null)}
     }
 
     function handleCharacterSelected(id) {
         try {
         logic.retrieveCharacter(id)
             .then(el => setCharacter(el.results[0]))
-            .catch(({ message }) => {
-                setCharacter(null)
-                setFeedback(message)
-            })
-        } catch ({ message }) {
-            setCharacter(null)
-            setFeedback(message)
-        }
+            .catch(({ message }) => { setCharacter(null); setFeedback(message)})
+        } catch ({ message }) { setCharacter(null); setFeedback(message) }
     }
 
     return <section className="margin-top">

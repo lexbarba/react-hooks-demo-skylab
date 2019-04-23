@@ -7,7 +7,7 @@ export default function SearchResults( { onCharacterSelected, feedback, characte
     <section>
         <div className="columns is-mobile is-multiline is-centered">
         {feedback && <Feedback message={feedback} />}
-        {searching && <span><i className=" favourite__loading fas fa-spinner fa-spin fa-2x" /></span>}
+        {searching && <span><i className="favourite__loading fas fa-spinner fa-spin fa-2x" /></span>}
         {characters && characters.map(({id, name, path, extension}) => 
             <div key={id} onClick={() => onCharacterSelected(id)} data-id={id} className="column cursor card is-one-third-widescreen is-two-fifths-tablet is-three-quarters-mobile has-text-centered">
                 <div className="pointer card-image">

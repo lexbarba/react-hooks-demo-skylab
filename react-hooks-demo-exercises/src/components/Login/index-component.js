@@ -23,7 +23,6 @@ export default class Login extends Component {
         <div className="columns is-mobile is-centered">
             <div className="column">
                 <form onSubmit={handleFormSubmit}>
-                    <h4 className="subtitle is-5 black">Log In</h4>
                     <div className="field">
                         <p className="control has-icons-left has-icons-right">
                             <input className="input is-small is-rounded" type="email" name="email" placeholder="Email" required onChange={handleEmailInput}/>
